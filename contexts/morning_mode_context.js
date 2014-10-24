@@ -1,18 +1,17 @@
 var operations = {
 	// Views/cnavi_tutorial_views.js
 	show_alert: function(){
-		alert('Good Morning!');
+		//TODO
 	},
 	
 	// Views/cnavi_tutorial_views.js
 	change_color: function(){
-		$('body').css('background', '#DDDDFF');
-		$('body').css('color', '#000077');
+		//TODO
 	},
 	
 	// Views/cnavi_tutorial_views.js
 	render_topic: function(){
-		$('#hello').html('Morning Mode');
+		//TODO
 	}
 };
 
