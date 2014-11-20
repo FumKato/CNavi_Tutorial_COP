@@ -13,3 +13,27 @@ if(Meteor.isClient){
 		}
 	});
 }
+
+if(Meteor.isServer){
+	adapt_context = function(mode){
+		switch(mode){
+			case 'morning':
+				//TODO
+				break;
+			case 'night':
+				//TODO
+				break;
+		}
+	};
+	
+	deactivate_context = function(mode){
+		switch(mode){
+			case 'morning':
+				//TODO
+				break;
+			case 'night':
+				//TODO
+				break;
+		}
+	};
+}
