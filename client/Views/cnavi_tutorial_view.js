@@ -2,7 +2,9 @@ CNaviTutorialView = function(){
 	var _this = CNaviTutorialView;
 	
 	_this.prototype.show_alert = function(){
-		$('#greet').html('Hello World!');
+		Meteor.call('get_message', Session.get('mode'), function(error, result){
+			$('#greet').html(result);
+		});
 	};
 	
 	_this.prototype.change_color = function(){
