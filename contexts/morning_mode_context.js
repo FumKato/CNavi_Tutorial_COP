@@ -12,6 +12,10 @@ var operations = {
 	// Views/cnavi_tutorial_views.js
 	render_topic: function(){
 		//TODO
+	},
+	
+	render_sentence: function(){
+		
 	}
 };
 

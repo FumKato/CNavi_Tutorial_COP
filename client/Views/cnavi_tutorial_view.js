@@ -12,6 +12,10 @@ CNaviTutorialView = function(){
 	_this.prototype.render_topic = function(){
 		//TODO
 	};
+	
+	_this.prototype.render_sentence = function(){
+		// TODO
+	};
 };
 
 cnavi_tutorial_view = new CNaviTutorialView();
