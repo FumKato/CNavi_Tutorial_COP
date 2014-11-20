@@ -2,7 +2,7 @@ CNaviTutorialView = function(){
 	var _this = CNaviTutorialView;
 	
 	_this.prototype.show_alert = function(){
-		alert('Hello World!');
+		$('#greet').html('Hello World!');
 	};
 	
 	_this.prototype.change_color = function(){
@@ -12,6 +12,10 @@ CNaviTutorialView = function(){
 	
 	_this.prototype.render_topic = function(){
 		$('#hello').html('Default Mode');
+	};
+	
+	_this.prototype.render_sentence = function(){
+		$('#sentence').html('Default Mode');
 	};
 };
 

@@ -17,6 +17,7 @@ CNaviTutorialController = function(){
 		cnavi_tutorial_view.change_color();
 		cnavi_tutorial_view.render_topic();
 		cnavi_tutorial_view.show_alert();
+		cnavi_tutorial_view.render_sentence();
 	};
 };
 

@@ -8,11 +8,13 @@ if(Meteor.isClient){
 				morning_mode_context.adapt('CNaviTutorialView', 'show_alert', 'show_alert');
 				morning_mode_context.adapt('CNaviTutorialView', 'change_color', 'change_color');
 				morning_mode_context.adapt('CNaviTutorialView', 'render_topic', 'render_topic');
+				morning_mode_context.adapt('CNaviTutorialView', 'render_sentence', 'render_sentence');
 				break;
 			case 'night':
 				night_mode_context.adapt('CNaviTutorialView', 'show_alert', 'show_alert');
 				night_mode_context.adapt('CNaviTutorialView', 'change_color', 'change_color');
 				night_mode_context.adapt('CNaviTutorialView', 'render_topic', 'render_topic');
+				morning_mode_context.adapt('CNaviTutorialView', 'render_sentence', 'render_sentence');
 				break;
 		}
 	});

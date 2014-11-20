@@ -1,7 +1,7 @@
 var operations = {
 	// Views/cnavi_tutorial_views.js
 	show_alert: function(){
-		alert('Good Night!');
+		$('#greet').html('Good Night!');
 	},
 	
 	// Views/cnavi_tutorial_views.js
