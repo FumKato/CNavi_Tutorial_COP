@@ -13,6 +13,9 @@ CNaviTutorialView = function(){
 	};
 	
 	_this.prototype.render_topic = function(){
+		var count = $('#count').html();
+		count++;
+		$('#count').html(count);
 		$('#hello').html('Default Mode');
 	};
 	

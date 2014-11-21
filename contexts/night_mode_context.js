@@ -8,6 +8,7 @@ if(Meteor.isClient){
 		
 		// Views/cnavi_tutorial_views.js
 		render_topic: function(){
+			this.proceeds.render_topic();
 			$('#hello').html('Night Mode');
 		}
 	};
