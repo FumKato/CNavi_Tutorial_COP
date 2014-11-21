@@ -9,7 +9,7 @@ suite('Client: CNaviTutorialView', function() {
 	test('render_topic: set appropriate topic in default mode', function(done, server, client) {
 		client.eval(function() {
 			Session.set('mode', 'default');
-			cnavi_tutorial_view.render_topic();
+			adapt_context(Session.get('mode'));
 			var result = $('#hello').html();
 			emit('check', result, 'Default Mode');
 			emit('done');
@@ -27,7 +27,7 @@ suite('Client: CNaviTutorialView', function() {
 	test('render_topic: set appropriate topic in morning mode', function(done, server, client) {
 		client.eval(function() {
 			Session.set('mode', 'morning');
-			cnavi_tutorial_view.render_topic();
+			adapt_context(Session.get('mode'));
 			var result = $('#hello').html();
 			emit('check', result, 'Morning Mode');
 			emit('done');
@@ -45,7 +45,7 @@ suite('Client: CNaviTutorialView', function() {
 	test('render_topic: set appropriate topic in night mode', function(done, server, client) {
 		client.eval(function() {
 			Session.set('mode', 'night');
-			cnavi_tutorial_view.render_topic();
+			adapt_context(Session.get('mode'));
 			var result = $('#hello').html();
 			emit('check', result, 'Night Mode');
 			emit('done');
@@ -63,7 +63,7 @@ suite('Client: CNaviTutorialView', function() {
 	test('render_sentence: set appropriate topic in default mode', function(done, server, client) {
 		client.eval(function() {
 			Session.set('mode', 'default');
-			cnavi_tutorial_view.render_sentence();
+			adapt_context(Session.get('mode'));
 			var result = $('#sentence').html();
 			emit('check', result, 'Default Mode');
 			emit('done');
@@ -81,7 +81,7 @@ suite('Client: CNaviTutorialView', function() {
 	test('render_sentence: set appropriate topic in morning mode', function(done, server, client) {
 		client.eval(function() {
 			Session.set('mode', 'morning');
-			cnavi_tutorial_view.render_sentence();
+			adapt_context(Session.get('mode'));
 			var result = $('#sentence').html();
 			emit('check', result, 'Morning / Night Mode');
 			emit('done');
@@ -99,7 +99,7 @@ suite('Client: CNaviTutorialView', function() {
 	test('render_sentence: set appropriate topic in night mode', function(done, server, client) {
 		client.eval(function() {
 			Session.set('mode', 'night');
-			cnavi_tutorial_view.render_sentence();
+			adapt_context(Session.get('mode'));
 			var result = $('#sentence').html();
 			emit('check', result, 'Morning / Night Mode');
 			emit('done');

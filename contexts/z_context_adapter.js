@@ -1,8 +1,8 @@
 if(Meteor.isClient){
-	Tracker.autorun(function(){
-			morning_mode_context.deactivate('CNaviTutorialView', 'show_alert');
+	adapt_context = function(mode){
 			morning_mode_context.deactivate('CNaviTutorialView', 'change_color');
 			morning_mode_context.deactivate('CNaviTutorialView', 'render_topic');
+			morning_mode_context.deactivate('CNaviTutorialView', 'render_sentence');
 		switch(Session.get('mode')){
 			case 'morning':
 				//TODO
@@ -11,6 +11,12 @@ if(Meteor.isClient){
 				//TODO
 				break;
 		}
+		cnavi_tutorial_view.render_topic();
+		cnavi_tutorial_view.render_sentence();
+	};
+	
+	Tracker.autorun(function(){
+		adapt_context(Session.get('mode'));
 	});
 }
 
