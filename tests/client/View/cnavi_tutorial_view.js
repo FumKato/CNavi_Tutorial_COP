@@ -6,31 +6,102 @@
 var assert = require('assert');
 
 suite('Client: CNaviTutorialView', function() {
-	test('render: render buttons on 事件前 phase with audience role', function(done, server, client) {
+	test('render_topic: set appropriate topic in default mode', function(done, server, client) {
 		client.eval(function() {
-			var IDs = setup(1, '事件前');
-			var werewolfView = new WerewolfView();
-			Session.set('myPlayerID', IDs.audienceID);
-			Session.set('villageID', IDs.villageID);
-			role = new RolesModel().getRolesByPlayerID(Session.get('myPlayerID'));
-			Session.set('myRole', role);
-			
-		  	werewolfView.flush('lobby');
-		  	werewolfView.render('village');
-		  	new ActionButtonView().flush();
-		  	new VillageView().enableInputs();
-		  	
-			adapt_context();
-			var targetName = '#participate';
-			var result = targetName + ': ' + $(targetName).is(':visible');
-			var expect = targetName + ': ' + 'true';
-			emit('check', result, expect);
-			
-			targetName = '#extraMenu';
-			result = targetName + ': ' + $(targetName).is(':visible');
-			expect = targetName + ': ' + 'false';
-			emit('check', result, expect);
-			
+			Session.set('mode', 'default');
+			cnavi_tutorial_view.render_topic();
+			var result = $('#hello').html();
+			emit('check', result, 'Default Mode');
+			emit('done');
+		});
+		
+		client.on('check', function(target, expect){
+			assert.equal(target, expect);
+		});
+		
+		client.once('done', function(){
+			done();
+		});
+	});
+	
+	test('render_topic: set appropriate topic in morning mode', function(done, server, client) {
+		client.eval(function() {
+			Session.set('mode', 'morning');
+			cnavi_tutorial_view.render_topic();
+			var result = $('#hello').html();
+			emit('check', result, 'Morning Mode');
+			emit('done');
+		});
+		
+		client.on('check', function(target, expect){
+			assert.equal(target, expect);
+		});
+		
+		client.once('done', function(){
+			done();
+		});
+	});
+	
+	test('render_topic: set appropriate topic in night mode', function(done, server, client) {
+		client.eval(function() {
+			Session.set('mode', 'night');
+			cnavi_tutorial_view.render_topic();
+			var result = $('#hello').html();
+			emit('check', result, 'Night Mode');
+			emit('done');
+		});
+		
+		client.on('check', function(target, expect){
+			assert.equal(target, expect);
+		});
+		
+		client.once('done', function(){
+			done();
+		});
+	});
+	
+	test('render_sentence: set appropriate topic in default mode', function(done, server, client) {
+		client.eval(function() {
+			Session.set('mode', 'default');
+			cnavi_tutorial_view.render_sentence();
+			var result = $('#sentence').html();
+			emit('check', result, 'Default Mode');
+			emit('done');
+		});
+		
+		client.on('check', function(target, expect){
+			assert.equal(target, expect);
+		});
+		
+		client.once('done', function(){
+			done();
+		});
+	});
+	
+	test('render_sentence: set appropriate topic in morning mode', function(done, server, client) {
+		client.eval(function() {
+			Session.set('mode', 'morning');
+			cnavi_tutorial_view.render_sentence();
+			var result = $('#sentence').html();
+			emit('check', result, 'Morning / Night Mode');
+			emit('done');
+		});
+		
+		client.on('check', function(target, expect){
+			assert.equal(target, expect);
+		});
+		
+		client.once('done', function(){
+			done();
+		});
+	});
+	
+	test('render_sentence: set appropriate topic in night mode', function(done, server, client) {
+		client.eval(function() {
+			Session.set('mode', 'night');
+			cnavi_tutorial_view.render_sentence();
+			var result = $('#sentence').html();
+			emit('check', result, 'Morning / Night Mode');
 			emit('done');
 		});
 		
